@@ -17,6 +17,8 @@ public class Main {
         GaussInverse gi = new GaussInverse();
         SystemIter sys = new SystemIter();
         SQU squ = new SQU();
+        Zeyd ze = new Zeyd();
+        LagrangeInterpolation lag = new LagrangeInterpolation();
         s.add(tm);
         s.add(im);
         s.add(cm);
@@ -26,6 +28,8 @@ public class Main {
         s.add(gi);
         s.add(squ);
         s.add(sys);
+        s.add(ze);
+        s.add(lag);
         System.out.println("Выберите метод из списка: ");
         int i = 0;
         for (Object obj: s) {
@@ -57,6 +61,10 @@ public class Main {
             ((SQU) selectedObject).execute(in);
         }else if (selectedObject instanceof SystemIter) {
             ((SystemIter) selectedObject).execute(in);
+        }else if (selectedObject instanceof Zeyd) {
+            ((Zeyd) selectedObject).execute(in);
+        }else if (selectedObject instanceof LagrangeInterpolation) {
+            ((LagrangeInterpolation) selectedObject).execute(in);
         }else {
             System.out.println("Выбран недопустимый объект");
         }
