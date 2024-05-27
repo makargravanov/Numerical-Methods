@@ -15,6 +15,7 @@ public class Main {
         Gauss ga = new Gauss();
         GaussDeterminant gd = new GaussDeterminant();
         GaussInverse gi = new GaussInverse();
+        SystemIter sys = new SystemIter();
         SQU squ = new SQU();
         s.add(tm);
         s.add(im);
@@ -24,6 +25,7 @@ public class Main {
         s.add(gd);
         s.add(gi);
         s.add(squ);
+        s.add(sys);
         System.out.println("Выберите метод из списка: ");
         int i = 0;
         for (Object obj: s) {
@@ -46,13 +48,15 @@ public class Main {
         } else if (selectedObject instanceof SimpsonIntegration) {
             ((SimpsonIntegration) selectedObject).execute(in);
         } else if (selectedObject instanceof Gauss) {
-        ((Gauss) selectedObject).execute(in);
+            ((Gauss) selectedObject).execute(in);
         }else if (selectedObject instanceof GaussDeterminant) {
             ((GaussDeterminant) selectedObject).execute(in);
         }else if (selectedObject instanceof GaussInverse) {
             ((GaussInverse) selectedObject).execute(in);
         }else if (selectedObject instanceof SQU) {
             ((SQU) selectedObject).execute(in);
+        }else if (selectedObject instanceof SystemIter) {
+            ((SystemIter) selectedObject).execute(in);
         }else {
             System.out.println("Выбран недопустимый объект");
         }
