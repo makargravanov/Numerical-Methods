@@ -15,6 +15,7 @@ public class Main {
         Gauss ga = new Gauss();
         GaussDeterminant gd = new GaussDeterminant();
         GaussInverse gi = new GaussInverse();
+        SQU squ = new SQU();
         s.add(tm);
         s.add(im);
         s.add(cm);
@@ -22,6 +23,7 @@ public class Main {
         s.add(ga);
         s.add(gd);
         s.add(gi);
+        s.add(squ);
         System.out.println("Выберите метод из списка: ");
         int i = 0;
         for (Object obj: s) {
@@ -49,6 +51,8 @@ public class Main {
             ((GaussDeterminant) selectedObject).execute(in);
         }else if (selectedObject instanceof GaussInverse) {
             ((GaussInverse) selectedObject).execute(in);
+        }else if (selectedObject instanceof SQU) {
+            ((SQU) selectedObject).execute(in);
         }else {
             System.out.println("Выбран недопустимый объект");
         }
