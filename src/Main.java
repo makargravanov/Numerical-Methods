@@ -13,11 +13,13 @@ public class Main {
         ChordMethod cm = new ChordMethod();
         SimpsonIntegration si = new SimpsonIntegration();
         Gauss ga = new Gauss();
+        GaussDeterminant gd = new GaussDeterminant();
         s.add(tm);
         s.add(im);
         s.add(cm);
         s.add(si);
         s.add(ga);
+        s.add(gd);
         System.out.println("Выберите метод из списка: ");
         int i = 0;
         for (Object obj: s) {
@@ -41,6 +43,8 @@ public class Main {
             ((SimpsonIntegration) selectedObject).execute(in);
         } else if (selectedObject instanceof Gauss) {
         ((Gauss) selectedObject).execute(in);
+        }else if (selectedObject instanceof GaussDeterminant) {
+            ((GaussDeterminant) selectedObject).execute(in);
         }   else {
             System.out.println("Выбран недопустимый объект");
         }
