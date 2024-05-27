@@ -14,12 +14,14 @@ public class Main {
         SimpsonIntegration si = new SimpsonIntegration();
         Gauss ga = new Gauss();
         GaussDeterminant gd = new GaussDeterminant();
+        GaussInverse gi = new GaussInverse();
         s.add(tm);
         s.add(im);
         s.add(cm);
         s.add(si);
         s.add(ga);
         s.add(gd);
+        s.add(gi);
         System.out.println("Выберите метод из списка: ");
         int i = 0;
         for (Object obj: s) {
@@ -45,7 +47,9 @@ public class Main {
         ((Gauss) selectedObject).execute(in);
         }else if (selectedObject instanceof GaussDeterminant) {
             ((GaussDeterminant) selectedObject).execute(in);
-        }   else {
+        }else if (selectedObject instanceof GaussInverse) {
+            ((GaussInverse) selectedObject).execute(in);
+        }else {
             System.out.println("Выбран недопустимый объект");
         }
 
